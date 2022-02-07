@@ -1,6 +1,12 @@
 version: '2'
 
 services:
+  notebook:
+    image: jupyter/pyspark-notebook
+    ports:
+      - '8888:8888'
+    volumes:
+      - ${PWD}/notebook:/home/jovyan/work
   spark:
     image: docker.io/bitnami/spark:3
     environment:
